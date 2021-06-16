@@ -1,0 +1,19 @@
+version: 0.2
+phases:
+ install:
+   commands:
+     - echo "Build Starting..."
+ build:
+   commands:
+     - env
+     - phpenv global $PHP_73_VERSION
+     - pwd
+     - ls -ltr
+
+ post_build:
+   commands:
+     - echo Build completed on `date`
+artifacts:
+  files:
+    - '**/*'
+  name: simple-php-$(date +%Y-%m-%d).zip
